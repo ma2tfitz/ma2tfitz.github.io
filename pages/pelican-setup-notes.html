@@ -22,6 +22,8 @@
     <h1 class="entry-title">Pelican Setup Notes</h1>
     
     <p>Create GitHub repos for ma2tfitz.github.src (these sources) and ma2tfitz.github.io (the generated GitHub pages). Will publish to 'output' as usual, but make that a submodule so that when we push from that diretcory it updates ma2tfitz.github.io).</p>
+<p>Before starting <code>publishconf.py</code> must be modified to not delete the output directory.</p>
+<p><code>DELETE_OUTPUT_DIRECTORY = False</code></p>
 <div class="highlight"><pre><span></span>git clone git@github.com:ma2tfitz/ma2tfitz.github.src
 git submodule add git@github.com:ma2tfitz/ma2tfitz.github.io.git output
 pelican-quickstart # or whatever to create the structure
@@ -37,6 +39,9 @@ git dd .
 git commit -m &#39;Initial commit&#39;
 git push -u origin master
 </pre></div>
+
+
+<p>Usual workflow follows (make publish; push to origin; etc)</p>
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">
