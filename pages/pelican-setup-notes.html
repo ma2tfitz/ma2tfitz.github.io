@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Pelican Setup Notes</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ma2tfitz Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">ma2tfitz </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/pages/pelican-setup-notes.html">Pelican Setup Notes</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Pelican Setup Notes</h1>
+    
+    <p>Create GitHub repos for ma2tfitz.github.src (these sources) and ma2tfitz.github.io (the generated GitHub pages). Will publish to 'output' as usual, but make that a submodule so that when we push from that diretcory it updates ma2tfitz.github.io).</p>
+<div class="highlight"><pre><span></span>git clone git@github.com:ma2tfitz/ma2tfitz.github.src
+git submodule add git@github.com:ma2tfitz/ma2tfitz.github.io.git output
+pelican-quickstart # or whatever to create the structure
+make html serve # check at localhost:8000
+make publish
+cd output # add &#39;output&#39; *first*
+git add .
+git commit -m &#39;Initial commit&#39;
+git push -u origin master
+cd ..
+# put *~ *.elc \#*\# *.pyc etc into .gitignore
+git dd .
+git commit -m &#39;Initial commit&#39;
+git push -u origin master
+</pre></div>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
